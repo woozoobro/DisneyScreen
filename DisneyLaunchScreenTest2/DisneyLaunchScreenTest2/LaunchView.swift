@@ -19,7 +19,8 @@ struct LaunchView: View {
         ZStack {
             if !isFinished {
                 ZStack {
-                    Color("BG")
+                    LinearGradient(colors: [Color("BG"),Color("BG2")
+                    ], startPoint: .top, endPoint: .bottom)
                         .ignoresSafeArea()
                     
                     GeometryReader { proxy in
@@ -96,6 +97,7 @@ struct LaunchView: View {
                             bowAnimation.toggle()
                         }
                     }
+                    
                     withAnimation(.linear(duration: 0.3).repeatForever(autoreverses: true)) {
                         glow.toggle()
                     }
@@ -106,14 +108,14 @@ struct LaunchView: View {
                         }
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.9) {
                         withAnimation(.spring()) {
                             showPlus.toggle()
                             startAnimation.toggle()
                         }
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.1) {
                         withAnimation(.linear(duration: 0.5)) {
                             plusGlow.toggle()
                         }
